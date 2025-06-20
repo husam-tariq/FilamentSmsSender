@@ -1,0 +1,166 @@
+<?php
+
+// translations for HusamTariq/FilamentSmsSender
+return [
+    // Navigation & Resource Labels
+    'navigation_group' => 'إدارة الرسائل النصية',
+    'navigation_label' => 'مقدمو خدمة الرسائل النصية',
+    'model_label' => 'مقدم خدمة الرسائل النصية',
+    'plural_model_label' => 'مقدمو خدمة الرسائل النصية',
+
+    // Page Titles
+    'page_title' => 'مقدمو خدمة الرسائل النصية',
+    'add_provider' => 'إضافة مقدم خدمة',
+    'edit_provider' => 'تعديل مقدم الخدمة',
+    'create_provider' => 'إنشاء مقدم خدمة',
+
+    // Form Sections
+    'provider_information' => 'معلومات مقدم الخدمة',
+    'provider_information_description' => 'معلومات أساسية حول مقدم خدمة الرسائل النصية',
+    'api_configuration' => 'إعدادات API',
+    'api_configuration_description' => 'تكوين إعدادات واجهة برمجة التطبيقات لبوابة الرسائل النصية',
+    'otp_configuration' => 'إعدادات كلمة المرور المؤقتة',
+    'otp_configuration_description' => 'تكوين إعدادات كلمة المرور المؤقتة لمقدم الخدمة هذا',
+    'success_configuration' => 'إعدادات النجاح',
+    'success_configuration_description' => 'تكوين شروط نجاح استجابة الرسائل النصية',
+
+    // Form Fields
+    'provider_name' => 'اسم مقدم الخدمة',
+    'provider_name_placeholder' => 'مثل: Twilio, Nexmo, AWS SNS',
+    'is_active' => 'نشط',
+    'is_active_help' => 'لا يمكن استخدام مقدمي الخدمة غير النشطين لإرسال الرسائل النصية',
+    'is_default' => 'تعيين كمقدم خدمة افتراضي',
+    'is_default_help' => 'يمكن تعيين مقدم خدمة واحد فقط كافتراضي في نفس الوقت',
+    'http_method' => 'طريقة HTTP',
+    'api_endpoint_url' => 'رابط نقطة النهاية',
+    'api_endpoint_placeholder' => 'https://api.sms-gateway.com/send',
+    'request_parameters' => 'معاملات الطلب',
+    'request_parameters_description' => 'حدد المعاملات المرسلة مع كل طلب رسالة نصية. استخدم {{ recipient }} و {{ message }} كعناصر نائبة.',
+    'parameter_name' => 'اسم المعامل',
+    'parameter_name_placeholder' => 'to, message, api_key, إلخ.',
+    'parameter_value' => 'قيمة المعامل',
+    'parameter_value_placeholder' => '{{ recipient }}, {{ message }}, your-api-key, إلخ.',
+    'add_parameter' => 'إضافة معامل',
+    'http_headers' => 'رؤوس HTTP',
+    'http_headers_description' => 'حدد رؤوس HTTP المخصصة (مثل Authorization, Content-Type)',
+    'header_name' => 'اسم الرأس',
+    'header_name_placeholder' => 'Authorization, Content-Type, إلخ.',
+    'header_value' => 'قيمة الرأس',
+    'header_value_placeholder' => 'Bearer your-token, application/json, إلخ.',
+    'add_header' => 'إضافة رأس',
+    'otp_length' => 'طول كلمة المرور المؤقتة',
+    'otp_expiry_minutes' => 'وقت انتهاء الصلاحية (بالدقائق)',
+    'otp_template' => 'قالب رسالة كلمة المرور المؤقتة',
+    'otp_template_placeholder' => 'كلمة المرور المؤقتة الخاصة بك هي: {{ otp_code }}',
+    'otp_template_default' => 'كلمة المرور المؤقتة الخاصة بك هي: {{ otp_code }}',
+    'otp_template_help' => 'استخدم {{ otp_code }} كعنصر نائب لكلمة المرور المؤقتة الفعلية',
+    'http_response_body' => 'محتوى استجابة HTTP',
+    'success_code' => 'رمز HTTP للنجاح',
+    'success_body' => 'قيمة محتوى النجاح',
+    'success_conditional_body' => 'شرط محتوى النجاح',
+    'success_conditional_equal' => 'يساوي',
+    'success_conditional_greater' => 'أكبر من',
+    'success_conditional_less' => 'أقل من',
+    'success_conditional_like' => 'يحتوي',
+
+    // Table Columns
+    'table_name' => 'اسم مقدم الخدمة',
+    'table_endpoint' => 'نقطة النهاية',
+    'table_method' => 'الطريقة',
+    'table_default' => 'افتراضي',
+    'table_active' => 'نشط',
+    'table_created' => 'تاريخ الإنشاء',
+
+    // Filters
+    'filter_default_provider' => 'مقدم الخدمة الافتراضي',
+    'filter_active' => 'نشط',
+
+    // Actions
+    'action_test' => 'اختبار',
+    'action_test_provider' => 'اختبار مقدم الخدمة',
+    'action_make_default' => 'جعل افتراضي',
+    'action_edit' => 'تعديل',
+    'action_delete' => 'حذف',
+
+    // Test Form
+    'test_phone_number' => 'رقم الهاتف للاختبار',
+    'test_phone_placeholder' => '+1234567890',
+    'test_message' => 'رسالة الاختبار',
+    'test_message_placeholder' => 'هذه رسالة اختبار',
+    'test_message_default' => 'رسالة اختبار من مقدم خدمة الرسائل النصية',
+
+    // Confirmation Modals
+    'make_default_heading' => 'جعل مقدم الخدمة افتراضي',
+    'make_default_description' => 'هل أنت متأكد من أنك تريد جعل \':name\' مقدم خدمة الرسائل النصية الافتراضي؟',
+
+    // Notifications
+    'test_sms_sent_title' => 'تم إرسال رسالة الاختبار',
+    'test_sms_sent_body' => 'تم إرسال رسالة الاختبار بنجاح!',
+    'test_failed_title' => 'فشل الاختبار',
+    'test_failed_body' => 'فشل في إرسال رسالة الاختبار. تحقق من السجلات للحصول على التفاصيل.',
+    'default_provider_updated_title' => 'تم تحديث مقدم الخدمة الافتراضي',
+    'default_provider_updated_body' => '\':name\' هو الآن مقدم خدمة الرسائل النصية الافتراضي.',
+    'cannot_delete_provider_title' => 'لا يمكن حذف مقدم الخدمة',
+    'cannot_delete_provider_body' => 'لا يمكن حذف مقدم الخدمة هذا لأنه مقدم الخدمة النشط الوحيد أو يحتوي على كلمات مرور مؤقتة معلقة.',
+    'provider_created_title' => 'تم إنشاء مقدم خدمة الرسائل النصية',
+    'provider_created_body' => 'تم إنشاء مقدم خدمة الرسائل النصية بنجاح.',
+    'provider_updated_title' => 'تم تحديث مقدم خدمة الرسائل النصية',
+    'provider_updated_body' => 'تم تحديث مقدم خدمة الرسائل النصية بنجاح.',
+    'default_provider_set_title' => 'تم تعيين مقدم الخدمة الافتراضي',
+    'default_provider_set_body' => 'تم تعيين مقدم الخدمة هذا تلقائياً كافتراضي لأنه أول مقدم خدمة لديك.',
+    'cannot_delete_all_active_title' => 'لا يمكن حذف جميع مقدمي الخدمة النشطين',
+    'cannot_delete_all_active_body' => 'يجب الاحتفاظ بمقدم خدمة رسائل نصية نشط واحد على الأقل.',
+
+    // Page Subheadings
+    'no_default_provider' => '⚠️ لم يتم تعيين مقدم خدمة افتراضي. :count مقدمي خدمة نشطين.',
+    'default_provider_status' => 'الافتراضي: :name | :count مقدمي خدمة نشطين',
+
+    // Additional settings
+    'sms_sender_settings' => 'إعدادات مرسل الرسائل النصية',
+    'gateway_settings' => 'إعدادات البوابة',
+    'gateway_settings_description' => 'تكوين إعدادات واجهة برمجة التطبيقات لبوابة الرسائل النصية',
+    'otp_settings' => 'إعدادات كلمة المرور المؤقتة',
+    'otp_settings_description' => 'تكوين إنشاء والتحقق من كلمة المرور المؤقتة',
+    'rate_limiting' => 'تحديد المعدل',
+    'rate_limiting_description' => 'تكوين تحديد المعدل لطلبات كلمة المرور المؤقتة',
+    'enable_rate_limiting' => 'تمكين تحديد المعدل',
+    'max_attempts' => 'أقصى عدد محاولات',
+    'time_window' => 'النافذة الزمنية (بالدقائق)',
+    'testing' => 'الاختبار',
+    'testing_description' => 'اختبر تكوين الرسائل النصية الخاص بك',
+    'send_test_sms' => 'إرسال رسالة نصية تجريبية',
+    'send_test_otp' => 'إرسال كلمة مرور مؤقتة تجريبية',
+    'save_settings' => 'حفظ الإعدادات',
+
+    // Additional notifications and confirmations
+    'settings_saved_title' => 'تم حفظ الإعدادات',
+    'settings_saved_body' => 'تم حفظ إعدادات بوابة الرسائل النصية بنجاح.',
+    'test_sms_confirmation' => 'هل أنت متأكد من أنك تريد إرسال رسالة نصية تجريبية؟ تأكد من حفظ تكوين البوابة أولاً.',
+    'test_otp_confirmation' => 'هل أنت متأكد من أنك تريد إرسال كلمة مرور مؤقتة تجريبية؟ تأكد من حفظ تكوين البوابة أولاً.',
+    'test_failed_missing_data' => 'يرجى إدخال كل من المستلم والرسالة.',
+    'test_sms_failed_body' => 'فشل في إرسال رسالة نصية تجريبية. يرجى التحقق من التكوين والسجلات.',
+    'test_otp_missing_recipient' => 'يرجى إدخال رقم هاتف المستلم.',
+    'test_otp_sent_title' => 'تم إرسال كلمة المرور المؤقتة التجريبية',
+    'test_otp_sent_body' => 'تم إرسال كلمة المرور المؤقتة التجريبية بنجاح! الرمز: :code',
+    'test_otp_failed_body' => 'فشل في إرسال كلمة المرور المؤقتة التجريبية. يرجى التحقق من التكوين والسجلات.',
+
+    // OTP Verification Component
+    'phone_number' => 'رقم الهاتف',
+    'phone_number_placeholder' => '+1234567890',
+    'identifier_optional' => 'المعرف (اختياري)',
+    'identifier_placeholder' => 'مثل: user_registration, password_reset',
+    'send_otp' => 'إرسال كلمة المرور المؤقتة',
+    'enter_otp_code' => 'أدخل كلمة المرور المؤقتة',
+    'otp_code_placeholder' => 'أدخل الرمز الذي تلقيته',
+    'verify_otp' => 'تحقق من كلمة المرور المؤقتة',
+    'reset' => 'إعادة تعيين',
+    'resend_otp' => 'إعادة إرسال كلمة مرور مؤقتة',
+    'verification_successful' => 'تم التحقق بنجاح!',
+    'phone_verified_successfully' => 'تم التحقق من رقم هاتفك بنجاح.',
+    'verify_another_number' => 'تحقق من رقم آخر',
+    'too_many_otp_requests' => 'طلبات كثيرة جداً لكلمة المرور المؤقتة. يرجى المحاولة مرة أخرى لاحقاً.',
+    'otp_sent_successfully' => 'تم إرسال كلمة المرور المؤقتة بنجاح!',
+    'failed_to_send_otp' => 'فشل في إرسال كلمة المرور المؤقتة. يرجى المحاولة مرة أخرى.',
+    'otp_verified_successfully' => 'تم التحقق من كلمة المرور المؤقتة بنجاح!',
+    'invalid_or_expired_otp' => 'كلمة مرور مؤقتة غير صحيحة أو منتهية الصلاحية.',
+];

@@ -1,0 +1,58 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('sms_providers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->boolean('is_default')->default(false);
+            $table->string('request_method')->default('POST');
+            $table->string('api_endpoint_url');
+            $table->json('request_parameters')->nullable();
+            $table->json('headers')->nullable();
+            $table->integer('success_code')->default(200);
+            $table->string('success_body')->default("sent successfully");
+            $table->string('success_conditional_body')->default("like");
+            $table->integer('otp_length')->default(6);
+            $table->integer('otp_expiry_minutes')->default(10);
+            $table->json('otp_template')->default(["en"=>'Your OTP code is: {{ otp_code }}',
+            "ar"=>"كلمة المرور المؤقتة الخاصة بك هي: {{ otp_code }}"]);
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+
+            $table->index('is_default');
+            $table->index('is_active');
+        });
+
+         // OTP Codes Table
+        Schema::create(config('filamentsmssender.tables.otp_codes', 'sms_sender_otp_codes'), function (Blueprint $table) {
+            $table->id();
+            $table->string('recipient');
+            $table->unsignedBigInteger('sms_provider_id')->nullable()->after('id');
+            $table->string('code');
+            $table->string('identifier')->nullable();
+            $table->timestamp('expires_at');
+            $table->boolean('is_used')->default(false);
+            $table->timestamp('used_at')->nullable();
+            $table->timestamps();
+            $table->index(['recipient', 'identifier']);
+            $table->index('expires_at');
+            $table->foreign('sms_provider_id')->references('id')->on('sms_providers')->onDelete('set null');
+            $table->index('sms_provider_id');
+        });
+
+
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists(config('filamentsmssender.tables.otp_codes', 'sms_sender_otp_codes'));
+        Schema::dropIfExists('sms_providers');
+    }
+};
