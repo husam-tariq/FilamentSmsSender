@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('success_conditional_body')->default("like");
             $table->integer('otp_length')->default(6);
             $table->integer('otp_expiry_minutes')->default(10);
-            $table->json('otp_template')->default(["en"=>'Your OTP code is: {{ otp_code }}',
-            "ar"=>"كلمة المرور المؤقتة الخاصة بك هي: {{ otp_code }}"]);
+            $table->json('otp_template')->nullable();
+           
             $table->boolean('is_active')->default(true);
             $table->timestamps();
 
@@ -34,7 +34,7 @@ return new class extends Migration
         Schema::create(config('filamentsmssender.tables.otp_codes', 'sms_sender_otp_codes'), function (Blueprint $table) {
             $table->id();
             $table->string('recipient');
-            $table->unsignedBigInteger('sms_provider_id')->nullable()->after('id');
+            $table->unsignedBigInteger('sms_provider_id')->nullable();
             $table->string('code');
             $table->string('identifier')->nullable();
             $table->timestamp('expires_at');
